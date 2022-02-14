@@ -1,7 +1,9 @@
 package herve.pitoscode.dependencyinjection.controllers;
 
 import herve.pitoscode.dependencyinjection.services.GreetingService;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class ConstructorInjectedController {
 
     private final GreetingService greetingService;
@@ -10,7 +12,7 @@ public class ConstructorInjectedController {
         this.greetingService = greetingService;
     }
 
-    String getGreeting(){
+    public String getGreeting(){
         return greetingService.sayGreeting();
     }
 }
