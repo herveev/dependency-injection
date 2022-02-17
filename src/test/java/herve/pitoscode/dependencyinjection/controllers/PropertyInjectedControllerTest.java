@@ -1,10 +1,8 @@
 package herve.pitoscode.dependencyinjection.controllers;
 
-import herve.pitoscode.dependencyinjection.services.GreetingServiceImpl;
+import herve.pitoscode.dependencyinjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectedControllerTest {
 
@@ -14,7 +12,7 @@ class PropertyInjectedControllerTest {
     void setUp(){
         controller = new PropertyInjectedController();
 
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
 
     }
 
