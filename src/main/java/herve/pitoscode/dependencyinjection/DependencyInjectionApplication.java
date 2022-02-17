@@ -1,9 +1,6 @@
 package herve.pitoscode.dependencyinjection;
 
-import herve.pitoscode.dependencyinjection.controllers.ConstructorInjectedController;
-import herve.pitoscode.dependencyinjection.controllers.MyController;
-import herve.pitoscode.dependencyinjection.controllers.PropertyInjectedController;
-import herve.pitoscode.dependencyinjection.controllers.SetterInjectedController;
+import herve.pitoscode.dependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,9 @@ public class DependencyInjectionApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext  ctx = SpringApplication.run(DependencyInjectionApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
